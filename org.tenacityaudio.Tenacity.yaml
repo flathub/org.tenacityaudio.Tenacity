@@ -36,6 +36,10 @@ add-extensions:
     merge-dirs: ladspa;lv2;vst;vst3
     subdirectories: true
     no-autodownload: true
+  org.freedesktop.Platform.ffmpeg-full:
+    version: '22.08'
+    autodownload: true
+    autodelete: false
 
 cleanup:
   - /include
