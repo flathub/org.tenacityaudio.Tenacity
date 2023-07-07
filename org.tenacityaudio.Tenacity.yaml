@@ -92,6 +92,7 @@ modules:
   - shared-modules/linux-audio/lv2.json
   - shared-modules/linux-audio/lilv.json
   - deps/suil.json
+  - deps/ffmpeg.yml
 
   - name: portaudio
     buildsystem: cmake-ninja
