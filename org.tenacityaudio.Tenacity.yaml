@@ -191,8 +191,8 @@ modules:
     sources:
       - type: git
         url: https://codeberg.org/tenacityteam/tenacity.git
-        tag: v1.3-flatpak
-        commit: b5d611acd6612a65c0b34266cf7bbc25ae15e9af
+        tag: v1.3.1
+        commit: 7da0988775e41f5c2ba0a0a600bcd160b2c5edb5
       - type: script
         dest-filename: tenacity.sh
         commands:
