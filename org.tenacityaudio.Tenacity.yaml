@@ -82,8 +82,8 @@ modules:
     sources:
       - type: git
         url: https://codeberg.org/tenacityteam/libid3tag.git
-        tag: 0.16.2
-        commit: 3df1882b76c2f44a274af1af33497125c95679b9
+        tag: 0.16.3
+        commit: 3dd24a0b6c42e65380f9107921f01e409d87e9f5
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
@@ -121,7 +121,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/PortMidi/portmidi.git
-        tag: 'v2.0.4'
+        tag: v2.0.4
         commit: b808babecdc5d05205467dab5c1006c5ac0fdfd4
         x-checker-data:
           type: git
