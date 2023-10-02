@@ -181,6 +181,7 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DWX_CONFIG=/app/bin/wx-config
+      - -DSBSMS=On
     post-install:
       - install -d /app/extensions/Plugins
       - install -Dm755 ../tenacity.sh /app/bin/tenacity.sh
