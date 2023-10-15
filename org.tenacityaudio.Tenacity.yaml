@@ -192,8 +192,8 @@ modules:
     sources:
       - type: git
         url: https://codeberg.org/tenacityteam/tenacity.git
-        tag: v1.3.1
-        commit: 7da0988775e41f5c2ba0a0a600bcd160b2c5edb5
+        tag: v1.3.2
+        commit: 665fba65feef180876b56517fe5cbb6e2ff85b1a
       - type: script
         dest-filename: tenacity.sh
         commands:
