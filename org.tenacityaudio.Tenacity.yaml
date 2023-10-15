@@ -8,7 +8,8 @@ rename-desktop-file: tenacity.desktop
 rename-appdata-file: tenacity.metainfo.xml
 finish-args:
   - --share=ipc
-  - --socket=x11
+  - --socket=wayland
+  - --socket=fallback-x11
   - --share=network # Tenacity uses network sockets for IPC
   - --socket=pulseaudio
   - --device=all # ALSA
