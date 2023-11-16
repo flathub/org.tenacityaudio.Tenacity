@@ -16,7 +16,7 @@ finish-args:
   - --filesystem=host
   # mod-script-pipe provides named pipes in /tmp
   - --filesystem=/tmp
-  - --env=LD_LIBRARY_PATH=/app/lib/audacity
+  - --env=LD_LIBRARY_PATH=/app/lib/tenacity
   - --env=ALSA_CONFIG_PATH=
   - --env=LADSPA_PATH=/app/extensions/Plugins/ladspa
   - --env=VST_PATH=/app/extensions/Plugins/vst
