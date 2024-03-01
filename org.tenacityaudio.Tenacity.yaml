@@ -52,19 +52,18 @@ cleanup:
 
 modules:
   - name: wxwidgets
-    rm-configure: true
+    buildsystem: cmake-ninja
     config-opts:
-      - --with-libpng
-      - --with-zlib
-      - --with-cxx=17
-      - --disable-sdltest
-      - --disable-webview
-      - --disable-webviewwebkit
-      - --disable-ribbon
-      - --disable-propgrid
-      - --disable-richtext
-      - --with-expat=builtin
-      - --with-libiconv=/usr
+      - -DwxUSE_LIBPNG=sys
+      - -DwxUSE_ZLIB=sys
+      - -DwxBUILD_CXX_STANDARD=17
+      - -DwxBUILD_TESTS=OFF
+      - -DwxUSE_WEBVIEW=OFF
+      - -DwxUSE_WEBVIEW_WEBKIT=OFF
+      - -DwxUSE_RIBBON=OFF
+      - -DwxUSE_PROPGRID=OFF
+      - -DwxUSE_RICHTEXT=OFF
+      - -DwxUSE_EXPAT=sys
     cleanup:
       - /share/bakefile
     sources:
@@ -183,6 +182,7 @@ modules:
       - /bin
 
   - name: soundtouch
+    buildsystem: cmake-ninja
     sources:
       - type: git
         url: https://codeberg.org/soundtouch/soundtouch.git
