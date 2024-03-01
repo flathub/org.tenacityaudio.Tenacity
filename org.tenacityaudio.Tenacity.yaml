@@ -55,6 +55,8 @@ modules:
     rm-configure: true
     buildsystem: cmake-ninja
     config-opts:
+      # Most of these options disable a lot of the toolkit. We might add more
+      # as Tenacity changes.
       - -DwxUSE_LIBPNG=sys
       - -DwxUSE_ZLIB=sys
       - -DwxBUILD_CXX_STANDARD=17
@@ -65,6 +67,27 @@ modules:
       - -DwxUSE_PROPGRID=OFF
       - -DwxUSE_RICHTEXT=OFF
       - -DwxUSE_EXPAT=sys
+      - -DwxUSE_MDI=OFF
+      - -DwxUSE_STC=Off
+      - -DwxUSE_MEDIACTRL=OFF
+      - -DwxUSE_XRC=OFF
+      - -DwxUSE_PROTOCOL=OFF
+      - -DwxUSE_URL=OFF
+      - -DwxUSE_FS_INET=OFF
+      - -DwxUSE_FS_ARCHIVE=OFF
+      - -DwxUSE_MDI_ARCHITECTURE=OFF
+      - -DwxUSE_LIBJPEG=OFF
+      - -DwxUSE_LIBTIFF=OFF
+      - -DwxUSE_NANOSVG=OFF
+      - -DwxUSE_SVG=OFF
+      - -DwxUSE_DIALUP_MANAGER=OFF
+      - -DwxUSE_DYNAMIC_LOADER=OFF
+      - -DwxUSE_LIBGNOMEVFS=OFF # Probably unnecessary, but just in case
+      - -DwxUSE_AUI=OFF
+      - -DwxUSE_ARCHIVE_STREAMS=OFF
+      - -DwxUSE_STACKWALKER=OFF
+      - -DwxUSE_DEBUGREPORT=OFF
+      - -DwxBUILD_COMPATIBILITY=3.1
     cleanup:
       - /share/bakefile
     sources:
