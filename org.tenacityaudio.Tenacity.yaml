@@ -65,6 +65,12 @@ modules:
       - -DwxUSE_PROPGRID=OFF
       - -DwxUSE_RICHTEXT=OFF
       - -DwxUSE_EXPAT=sys
+      - -DwxUSE_MDI=OFF
+      - -DwxUSE_STC=Off
+      - -DwxUSE_MEDIACTRL=OFF
+      - -DwxUSE_XRC=OFF
+      - -DwxUSE_PROTOCOL=OFF
+      - -DwxUSE_SOUND=OFF
     cleanup:
       - /share/bakefile
     sources:
