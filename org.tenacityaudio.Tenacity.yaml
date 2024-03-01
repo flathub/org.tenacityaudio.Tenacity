@@ -154,7 +154,7 @@ modules:
     no-parallel-make: true
     sources:
       - type: git
-        url: https://github.com/c4dm/vamp-plugin-sdk.git
+        url: https://github.com/vamp-plugins/vamp-plugin-sdk.git
         tag: vamp-plugin-sdk-v2.10
         commit: 67adfc2bf9486912a0fce5123cf54360ea2678bc
     cleanup:
