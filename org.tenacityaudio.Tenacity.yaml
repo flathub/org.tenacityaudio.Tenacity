@@ -117,7 +117,7 @@ modules:
           type: git
           tag-pattern: ^([\d.]+)$
 
-  - name: portmidi-mixxxdj
+  - name: portmidi
     buildsystem: cmake-ninja
     sources:
       - type: git
