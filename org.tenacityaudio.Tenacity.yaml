@@ -95,6 +95,28 @@ modules:
   - deps/suil.json
   - deps/ffmpeg.yml
 
+  - name: libebml
+    buildsystem: cmake-ninja
+    sources:
+      - type: git
+        url: https://github.com/Matroska-Org/libebml.git
+        tag: release-1.4.5
+        commit: 1878e784321673561039a6a37076b2736f4dc98f
+        x-checker-data:
+          type: git
+          tag-pattern: ^release-([\d.]+)$
+
+  - name: libmatroska
+    buildsystem: cmake-ninja
+    sources:
+      - type: git
+        url: https://github.com/Matroska-Org/libmatroska.git
+        tag: release-1.7.1
+        commit: f5315fddda2d434e47035c038549a808d8b8eac7
+        x-checker-data:
+          type: git
+          tag-pattern: ^release-([\d.]+)$
+
   - name: portaudio
     buildsystem: cmake-ninja
     sources:
