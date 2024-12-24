@@ -1,6 +1,6 @@
 app-id: org.tenacityaudio.Tenacity
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: tenacity.sh
 rename-icon: tenacity
@@ -32,13 +32,13 @@ add-extensions:
   #   autodelete: true
   org.freedesktop.LinuxAudio.Plugins:
     directory: extensions/Plugins
-    version: '23.08'
+    version: '24.08'
     add-ld-path: lib
     merge-dirs: ladspa;lv2;vst;vst3
     subdirectories: true
     no-autodownload: true
   org.freedesktop.Platform.ffmpeg-full:
-    version: '23.08'
+    version: '24.08'
     autodownload: true
     autodelete: false
 
