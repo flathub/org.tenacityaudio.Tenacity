@@ -4,6 +4,7 @@ runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: tenacity.sh
 rename-icon: tenacity
+copy-icon: true
 rename-desktop-file: tenacity.desktop
 rename-appdata-file: tenacity.metainfo.xml
 finish-args:
