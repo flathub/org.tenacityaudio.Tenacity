@@ -94,8 +94,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/wxWidgets/wxWidgets
-        tag: v3.2.7.1
-        commit: a7d97b966993214a5ea8928aec6ed5fa6e32f939
+        tag: v3.2.8
+        commit: 8aef5f40b93958719771331ca03866b7b6fff6bf
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
