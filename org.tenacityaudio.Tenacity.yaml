@@ -94,8 +94,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/wxWidgets/wxWidgets
-        tag: v3.2.8.1
-        commit: 896e4f587615b832ce27b8325357cb504997e1d3
+        tag: v3.3.0
+        commit: e92f57b421938e00f0ad944c281c2e353eee2ab8
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -168,8 +168,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/PortMidi/portmidi.git
-        tag: v2.0.4
-        commit: b808babecdc5d05205467dab5c1006c5ac0fdfd4
+        tag: v2.0.6
+        commit: 07ae853a20c7484c7bde1893ed68c06a852dcf17
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
