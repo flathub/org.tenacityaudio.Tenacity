@@ -1,6 +1,6 @@
 app-id: org.tenacityaudio.Tenacity
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: tenacity.sh
 rename-icon: tenacity
