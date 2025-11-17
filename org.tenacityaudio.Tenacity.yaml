@@ -100,8 +100,6 @@ modules:
           type: git
           tag-pattern: ^v([\d.]+)$
 
-  - deps/lame-3.100.json
-
   - name: libid3tag
     buildsystem: cmake-ninja
     sources:
