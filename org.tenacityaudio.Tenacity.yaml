@@ -37,15 +37,12 @@ add-extensions:
     merge-dirs: ladspa;lv2;vst;vst3
     subdirectories: true
     no-autodownload: true
-  org.freedesktop.Platform.ffmpeg-full:
-    version: '25.08'
-    autodownload: true
-    autodelete: false
 
 cleanup:
   - /include
   - /lib/pkgconfig
   - /share/aclocal
+  - /share/doc
   - /share/man
   - '*.la'
   - '*.a'
@@ -102,6 +99,8 @@ modules:
 
   - name: libid3tag
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://codeberg.org/tenacityteam/libid3tag.git
@@ -115,10 +114,11 @@ modules:
   - shared-modules/linux-audio/lv2.json
   - shared-modules/linux-audio/lilv.json
   - deps/suil.json
-  - deps/ffmpeg.yml
 
   - name: libebml
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://github.com/Matroska-Org/libebml.git
@@ -130,6 +130,8 @@ modules:
 
   - name: libmatroska
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://github.com/Matroska-Org/libmatroska.git
@@ -141,6 +143,8 @@ modules:
 
   - name: portaudio
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://github.com/PortAudio/portaudio.git
@@ -151,6 +155,8 @@ modules:
           tag-pattern: ^v([\d.]+)$
 
   - name: portsmf
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     buildsystem: cmake-ninja
     sources:
       - type: git
@@ -174,6 +180,8 @@ modules:
 
   - name: soxr
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://github.com/chirlu/soxr.git
@@ -184,6 +192,8 @@ modules:
           tag-pattern: ^([\d.]+)$
 
   - name: libsbsms
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     buildsystem: cmake-ninja
     sources:
       - type: git
@@ -240,6 +250,8 @@ modules:
         url: https://codeberg.org/tenacityteam/tenacity.git
         tag: v1.3.4
         commit: c6eb43e62e0b69d7f0dd7f2871d10a8ebc2d56a7
+      - type: patch
+        path: fix-tenacity-build-errors.patch
       - type: script
         dest-filename: tenacity.sh
         commands:

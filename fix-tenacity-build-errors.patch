@@ -1,0 +1,63 @@
+From 4b829082fc7fdaae1d3b10668c122b36a49f9170 Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Sat, 17 Jan 2026 23:56:50 +0300
+Subject: [PATCH] Several fixes
+
+Some changes are based on claude.ai suggestions
+---
+ libraries/lib-utility/MemoryX.cpp                              | 1 +
+ src/TimerRecordDialog.cpp                                      | 6 ++++--
+ src/tracks/playabletrack/wavetrack/ui/WaveTrackViewConstants.h | 1 +
+ 3 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/libraries/lib-utility/MemoryX.cpp b/libraries/lib-utility/MemoryX.cpp
+index d4e7113..d37a78a 100644
+--- a/libraries/lib-utility/MemoryX.cpp
++++ b/libraries/lib-utility/MemoryX.cpp
+@@ -9,6 +9,7 @@
+  **********************************************************************/
+ 
+ #include "MemoryX.h"
++#include <cstdint>
+ 
+ // Make the symbol table non-empty
+ UTILITY_API void lib_utility_dummy_symbol()
+diff --git a/src/TimerRecordDialog.cpp b/src/TimerRecordDialog.cpp
+index 3a9be0a..0abd204 100644
+--- a/src/TimerRecordDialog.cpp
++++ b/src/TimerRecordDialog.cpp
+@@ -217,7 +217,8 @@ void TimerRecordDialog::OnDatePicker_Start(wxDateEvent& WXUNUSED(event))
+ 
+    // User might have had the dialog up for a while, or
+    // had a future day, set hour of day less than now's, then changed day to today.
+-   wxTimerEvent dummyTimerEvent;
++   wxTimer dummyTimer;
++   wxTimerEvent dummyTimerEvent(dummyTimer);
+    this->OnTimer(dummyTimerEvent);
+ 
+    // Always update End for changed Start, keeping Duration constant.
+@@ -532,7 +533,8 @@ int TimerRecordDialog::RunWaitDialog()
+ 
+          // Make sure that start and end time are updated, so we always get the full
+          // duration, even if there's some delay getting here.
+-         wxTimerEvent dummyTimerEvent;
++         wxTimer dummyTimer;
++         wxTimerEvent dummyTimerEvent(dummyTimer);
+          this->OnTimer(dummyTimerEvent);
+ 
+          // Loop for progress display during recording.
+diff --git a/src/tracks/playabletrack/wavetrack/ui/WaveTrackViewConstants.h b/src/tracks/playabletrack/wavetrack/ui/WaveTrackViewConstants.h
+index 4fd3f47..173af88 100644
+--- a/src/tracks/playabletrack/wavetrack/ui/WaveTrackViewConstants.h
++++ b/src/tracks/playabletrack/wavetrack/ui/WaveTrackViewConstants.h
+@@ -13,6 +13,7 @@ Paul Licameli split from class WaveTrack
+ 
+ // Tenacity libraries
+ #include <lib-components/ComponentInterfaceSymbol.h> // for EnumValueSymbol
++#include <algorithm>
+ 
+ namespace WaveTrackViewConstants
+ {
+--
+libgit2 1.7.2
+
