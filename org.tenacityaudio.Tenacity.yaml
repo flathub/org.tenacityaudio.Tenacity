@@ -94,8 +94,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/wxWidgets/wxWidgets
-        tag: v3.2.8.1
-        commit: 896e4f587615b832ce27b8325357cb504997e1d3
+        tag: v3.3.1
+        commit: 49c6810948f40c457e3d0848b9111627b5b61de5
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -107,8 +107,8 @@ modules:
     sources:
       - type: git
         url: https://codeberg.org/tenacityteam/libid3tag.git
-        tag: 0.16.3
-        commit: e02ecf1276b467a8a5dd20c55ce711e6f7116d3e
+        tag: 0.16.4
+        commit: fff52d4e27a6f8e3a714bd304e4258d9e1b0dad8
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
@@ -168,8 +168,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/PortMidi/portmidi.git
-        tag: v2.0.4
-        commit: b808babecdc5d05205467dab5c1006c5ac0fdfd4
+        tag: v2.0.8
+        commit: 101dac9455e2718512c94e24cbcae6a6f34b908b
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
