@@ -1,6 +1,6 @@
 app-id: org.tenacityaudio.Tenacity
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: tenacity.sh
 rename-icon: tenacity
@@ -12,7 +12,7 @@ finish-args:
   - --socket=fallback-x11
   - --share=network # Tenacity uses network sockets for IPC
   - --socket=pulseaudio
-  - --device=all # ALSA
+  - --device=dri
   - --filesystem=host
   # mod-script-pipe provides named pipes in /tmp
   - --filesystem=/tmp
@@ -22,7 +22,7 @@ finish-args:
   - --env=VST_PATH=/app/extensions/Plugins/vst
   - --env=VST3_PATH=/app/extensions/Plugins/vst3
   # JACK support via pipewire
-  - --filesystem=xdg-run/pipewire-0
+  - --filesystem=xdg-run/pipewire-0:ro
 
 add-extensions:
   # org.audacityteam.Audacity.Codecs:
@@ -32,15 +32,11 @@ add-extensions:
   #   autodelete: true
   org.freedesktop.LinuxAudio.Plugins:
     directory: extensions/Plugins
-    version: '24.08'
+    version: '25.08'
     add-ld-path: lib
     merge-dirs: ladspa;lv2;vst;vst3
     subdirectories: true
     no-autodownload: true
-  org.freedesktop.Platform.ffmpeg-full:
-    version: '24.08'
-    autodownload: true
-    autodelete: false
 
 cleanup:
   - /include
@@ -100,10 +96,10 @@ modules:
           type: git
           tag-pattern: ^v([\d.]+)$
 
-  - deps/lame-3.100.json
-
   - name: libid3tag
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://codeberg.org/tenacityteam/libid3tag.git
@@ -117,10 +113,11 @@ modules:
   - shared-modules/linux-audio/lv2.json
   - shared-modules/linux-audio/lilv.json
   - deps/suil.json
-  - deps/ffmpeg.yml
 
   - name: libebml
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://github.com/Matroska-Org/libebml.git
@@ -132,6 +129,8 @@ modules:
 
   - name: libmatroska
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://github.com/Matroska-Org/libmatroska.git
@@ -143,6 +142,8 @@ modules:
 
   - name: portaudio
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://github.com/PortAudio/portaudio.git
@@ -154,6 +155,8 @@ modules:
 
   - name: portsmf
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://codeberg.org/tenacityteam/portsmf.git
@@ -176,6 +179,8 @@ modules:
 
   - name: soxr
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://github.com/chirlu/soxr.git
@@ -187,6 +192,8 @@ modules:
 
   - name: libsbsms
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
         url: https://github.com/claytonotey/libsbsms.git
@@ -226,6 +233,8 @@ modules:
   - name: tenacity
     buildsystem: cmake-ninja
     builddir: true
+    build-options:
+      cxxflags: -include cstdint
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DWX_CONFIG=/app/bin/wx-config
@@ -246,4 +255,4 @@ modules:
         dest-filename: tenacity.sh
         commands:
           - export LV2_PATH=$HOME/.lv2:/app/extensions/Plugins/lv2:/app/lib/lv2
-          - exec tenacity $*
+          - exec tenacity "$@"
