@@ -124,8 +124,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/Matroska-Org/libebml.git
-        tag: release-1.4.5
-        commit: 1878e784321673561039a6a37076b2736f4dc98f
+        tag: release-1.4.6
+        commit: 91273d2d0fb123ee4f9b7ec9763f2f91ac2b7519
         x-checker-data:
           type: git
           tag-pattern: ^release-([\d.]+)$
@@ -137,8 +137,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/Matroska-Org/libmatroska.git
-        tag: release-1.7.1
-        commit: f5315fddda2d434e47035c038549a808d8b8eac7
+        tag: release-1.7.2
+        commit: 280281a8aeb69881f70ee3d6ff26aa6d964365a3
         x-checker-data:
           type: git
           tag-pattern: ^release-([\d.]+)$
