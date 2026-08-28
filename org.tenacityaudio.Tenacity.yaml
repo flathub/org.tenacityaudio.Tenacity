@@ -13,6 +13,7 @@ finish-args:
   - --share=network # Tenacity uses network sockets for IPC
   - --socket=pulseaudio
   - --device=dri
+  - --device=shm # Needed for IPC
   - --filesystem=host
   # mod-script-pipe provides named pipes in /tmp
   - --filesystem=/tmp
