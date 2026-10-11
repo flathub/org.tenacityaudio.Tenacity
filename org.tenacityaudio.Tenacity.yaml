@@ -162,7 +162,7 @@ modules:
       - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     sources:
       - type: git
-        url: https://codeberg.org/tenacityteam/portsmf.git
+        url: https://github.com/portsmf/portsmf.git
         tag: '239'
         commit: 951b636f7d0cba370d483a91f1897c71f3d98530
         x-checker-data:
