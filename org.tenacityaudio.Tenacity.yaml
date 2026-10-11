@@ -117,6 +117,18 @@ modules:
   - shared-modules/linux-audio/lilv.json
   - deps/suil.json
 
+  # Required for libebml and libmatroska
+  - name: utf8-cpp
+    buildsystem: cmake-ninja
+    sources:
+      - type: git
+        url: https://github.com/nemtrif/utfcpp
+        tag: v4.2.1
+        commit: 3d1ff6dbf54e471c846dff55dda6c8ee10c0ee5c
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
+
   - name: libebml
     buildsystem: cmake-ninja
     config-opts:
