@@ -118,7 +118,7 @@ modules:
   - deps/suil.json
 
   # Required for libebml and libmatroska
-  - name: utf8-cpp
+  - name: utf8cpp
     buildsystem: cmake-ninja
     sources:
       - type: git
@@ -133,6 +133,7 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+      - -DBUILD_SHARED_LIBS=ON
     sources:
       - type: git
         url: https://github.com/Matroska-Org/libebml.git
@@ -146,6 +147,7 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+      - -DBUILD_SHARED_LIBS=ON
     sources:
       - type: git
         url: https://github.com/Matroska-Org/libmatroska.git
