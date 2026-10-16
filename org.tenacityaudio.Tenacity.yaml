@@ -258,8 +258,6 @@ modules:
   - name: tenacity
     buildsystem: cmake-ninja
     builddir: true
-    build-options:
-      cxxflags: -include cstdint
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DWX_CONFIG=/app/bin/wx-config
