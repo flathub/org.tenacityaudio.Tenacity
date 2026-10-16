@@ -54,38 +54,44 @@ modules:
       # Most of these options disable a lot of the toolkit. We might add more
       # as Tenacity changes.
       - -DwxUSE_LIBPNG=sys
-      - -DwxUSE_ZLIB=sys
+      - -DwxUSE_ZLIB=OFF
       - -DwxBUILD_CXX_STANDARD=17
       - -DwxBUILD_TESTS=OFF
       - -DwxUSE_WEBVIEW=OFF
-      - -DwxUSE_WEBVIEW_WEBKIT=OFF
+      - -DwxUSE_WEBREQUEST=OFF
       - -DwxUSE_RIBBON=OFF
       - -DwxUSE_PROPGRID=OFF
       - -DwxUSE_RICHTEXT=OFF
-      - -DwxUSE_RICHTEXT_XML_HANDLER=OFF
-      - -DwxUSE_EXPAT=sys
+      - -DwxUSE_EXPAT=OFF
       - -DwxUSE_MDI=OFF
       - -DwxUSE_STC=OFF
       - -DwxUSE_MEDIACTRL=OFF
       - -DwxUSE_PROTOCOL=OFF
       - -DwxUSE_FS_INET=OFF
+      - -DwxUSE_FS_ARCHIVE=OFF
       - -DwxUSE_URL=OFF
       - -DwxUSE_MDI_ARCHITECTURE=OFF
       - -DwxUSE_LIBJPEG=OFF
       - -DwxUSE_LIBTIFF=OFF
+      - -DwxUSE_LIBSDL=OFF
+      - -DwxUSE_LIBWEBP=OFF
       - -DwxUSE_NANOSVG=OFF
       - -DwxUSE_SVG=OFF
       - -DwxUSE_DIALUP_MANAGER=OFF
       - -DwxUSE_DYNAMIC_LOADER=OFF
       - -DwxUSE_LIBGNOMEVFS=OFF # Probably unnecessary, but just in case
       - -DwxUSE_AUI=OFF
-      # FIXME: Uncomment these build options once the next stable release is
-      # out. See https://codeberg.org/tenacityteam/tenacity/pulls/525 for more
-      # details.
-      # - -DwxUSE_STACKWALKER=OFF
-      # - -DwxUSE_DEBUGREPORT=OFF
-      # Disabling XRC causes issues ('cannot find -lwxxml')
-      # - -DwxUSE_XRC=OFF
+      - -DwxUSE_STACKWALKER=OFF
+      - -DwxUSE_DEBUGREPORT=OFF
+      - -DwxUSE_XML=OFF
+      - -DwxUSE_XRC=OFF
+      - -DwxUSE_FSWATCHER=OFF
+      - -DwxUSE_MIMETYPE=OFF
+      - -DwxUSE_TARSTREAM=OFF
+      - -DwxUSE_BANNERWINDOW=OFF
+      - -DwxUSE_BANNERWINDOW=OFF
+      - -DwxUSE_ANIMATIONCTRL=OFF
+      - -DwxUSE_CARET=OFF
     cleanup:
       - /bin
       - /lib/wx
