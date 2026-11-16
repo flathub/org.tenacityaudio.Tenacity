@@ -269,6 +269,9 @@ modules:
         url: https://codeberg.org/tenacityteam/tenacity.git
         tag: v1.3.5
         commit: 52ef74db0a2ee8a9e42be1f4a2ff57d90d6564d7
+      # FFmpeg 8 support, drop after 1.3.5
+      - type: patch
+        path: ffmpeg-8-support.patch
       - type: script
         dest-filename: tenacity.sh
         commands:
